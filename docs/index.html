@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>東海市議選 ブロードリスニング分析</title>
+<style>
+  body { font-family: -apple-system, 'Hiragino Sans', sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background: #f8f9fa; color: #333; }
+  h1 { font-size: 1.5em; border-bottom: 2px solid #333; padding-bottom: 8px; }
+  .card { background: white; border-radius: 12px; padding: 20px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .card h2 { font-size: 1.1em; margin-top: 0; }
+  .card p { font-size: 0.9em; color: #666; line-height: 1.6; }
+  a.btn { display: block; background: #2563eb; color: white; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 12px; }
+  a.btn:hover { background: #1d4ed8; }
+  .note { background: #fff3cd; border-radius: 8px; padding: 14px; font-size: 0.85em; line-height: 1.5; margin-top: 20px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .stat { background: #f0f4ff; border-radius: 8px; padding: 12px; text-align: center; }
+  .stat .num { font-size: 1.8em; font-weight: bold; color: #2563eb; }
+  .stat .label { font-size: 0.8em; color: #666; }
+</style>
+</head>
+<body>
+<h1>東海市議会議員選挙<br>ブロードリスニング分析</h1>
+<p>投開票日: 2026年3月29日（日）｜定数22 / 立候補33名</p>
+
+<div class="stats">
+  <div class="stat"><div class="num">2,074</div><div class="label">分析ツイート数</div></div>
+  <div class="stat"><div class="num">37</div><div class="label">意見クラスタ（全体）</div></div>
+  <div class="stat"><div class="num">145</div><div class="label">市民の声</div></div>
+  <div class="stat"><div class="num">3</div><div class="label">意見クラスタ（市民）</div></div>
+</div>
+
+<div class="card">
+  <h2>1. X全体像（2,074件 → 37クラスタ）</h2>
+  <p>候補者・応援者を含む全ツイートの意見分布。参政党ネットワークの応援投稿が88%を占める構造が可視化されています。</p>
+  <a class="btn" href="all.html">全体像のクラスタマップを見る</a>
+</div>
+
+<div class="card">
+  <h2>2. 一般市民の声（145件 → 3クラスタ）</h2>
+  <p>候補者・政党関係者・多投稿者を除外した一般市民のツイートのみ。「応援」「投票呼びかけ」「落選運動」の3グループに分かれました。</p>
+  <a class="btn" href="citizen.html">市民の声のクラスタマップを見る</a>
+</div>
+
+<div class="note">
+  <strong>本資料について</strong><br>
+  本資料は愛知県東海市議会議員選挙（2026年3月29日投開票）におけるX（旧Twitter）上の投稿をAI技術（ブロードリスニング）で分析した調査レポートです。特定の候補者・政党を支持・推薦するものではありません。分析結果はX上の公開投稿のみを対象としており、市民全体の意見を代表するものではありません。投票の判断はご自身でお願いいたします。<br><br>
+  分析手法: X API v2 → OpenAI Embedding → UMAP次元削減 → HDBSCANクラスタリング → GPT-4oラベリング<br>
+  データ期間: 2026年3月22日〜28日
+</div>
+</body>
+</html>
